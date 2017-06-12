@@ -214,6 +214,12 @@ $.fn.serializeObject = function()
       console.log("event: "+event.which);
     });
 
+    $( "#matricola" ).change(function(){
+        this.value = this.value.toLowerCase();
+        //DEBUG alert(this.value);
+    });
+
+
     $( "#password" ).keydown(function( event ) {
       if ( event.which == 13 ) {
         event.preventDefault();
@@ -222,12 +228,6 @@ $.fn.serializeObject = function()
     });
 
   });  
-</script>
-
-<script>
-$('#matricola').onchange(function(){
-    this.value = this.value.toLowerCase();
-});
 </script>
 
 </head>
