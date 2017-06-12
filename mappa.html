@@ -666,6 +666,11 @@ function statecheck(x, _this) {
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSOthkwq0sKfWCDOCUmnfSlzeUi72r7hg&signed_in=true&libraries=places&callback=initMap">
     </script>
 
+<script>
+$('#targa_veicolo').onchange(function(){
+    this.value = this.value.toUpperCase();
+});
+</script>
 
 <div class="modal fade" id="prendi_a_vista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -679,8 +684,7 @@ function statecheck(x, _this) {
         <div class="row">
           <div class="container-fluid">
             <label style="color:#000000;" >Numero di Targa</label>
-            <input id="targa_veicolo" name="targa_veicolo" class="form-control input-lg" type="text" placeholder="numero targa" 
-                   onchange="this.value = this.value.toUpperCase( );">
+            <input id="targa_veicolo" style="text-transform: uppercase" name="targa_veicolo" class="form-control input-lg" type="text" >
           </div>
         </div>
       </div>
