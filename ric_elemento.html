@@ -187,7 +187,25 @@
       localStorage.setItem("nome_elemento", name);
       var xmlhttp = new XMLHttpRequest();
 //var url="http://surak/CCSApp/ccs_query.php?pin=test1&token=FAD4A66AB106FE&latitude=41.90&longitude=12.50&poiType=1,2,3,4&range=30&elements=100&name=609";
-var url="http://2.35.153.229/CCSApp/ccs_query.php?pin=test1&token=FAD4A66AB106FE&latitude="+lat+"&longitude="+lon+"&poiType="+poiType+"&range="+range+"&elements="+limit+"&name="+name;
+//var url="http://2.35.153.229/CCSApp/ccs_query.php?pin=test1&token=FAD4A66AB106FE&latitude="+lat+"&longitude="+lon+"&poiType="+poiType+"&range="+range+"&elements="+limit+"&name="+name;
+//var url="http://192.168.1.5/CCSApp/ccs_query.php?pin=test1&token=FAD4A66AB106FE&latitude="+lat+"&longitude="+lon+"&poiType="+poiType+"&range="+range+"&elements="+limit+"&name="+name;
+
+/*PARAMETRI :
+ - citta: fissa su ROMA a meno che l'utente non la cambia
+ - tipologie veicolo: TUTTE a meno che l'utente non le ha scelte nel right menu
+ - distanza: fissa a 30 km
+ - elementi: fisso a 200
+ad esempio:
+http://service.cloudmup.com/GOALocale/MachiavelliQuery.php?pin=test1&token=FAD4A66AB106FE&latitude=41.9027835&longitude=12.4963655&poiType=&range=30&elements=200&name=
+*/
+
+//var url="http://service.cloudmup.com/GOALocale/MachiavelliQuery.php?pin=test1&token=FAD4A66AB106FE&latitude="+lat+"&longitude="+lon+"&poiType="+poiType+"&range="+range+"&elements="+limit+"&name="+name;
+      var url="http://service.cloudmup.com/GOALocale/MachiavelliQuery.php?pin=test1&token=FAD4A66AB106FE&latitude="+lat+"&longitude="+lon+"&poiType="+poiType+"&range=30&elements=200&name=";
+      if (name != null){
+        url= url + name;
+        //DEBUG alert("url: " + url);
+      }
+
       console.log("url:"+url);
       xmlhttp.onreadystatechange=function() {
           //DEBUG alert("onreadystatechange");
@@ -233,7 +251,8 @@ var url="http://2.35.153.229/CCSApp/ccs_query.php?pin=test1&token=FAD4A66AB106FE
          var btn = $(this);
          btn.button('loading');
         //function call(lat, lon, page, poiType, range, limit, name)
-         call(lat, lon, "vis_mappa.html", params['poiType'], params['range'], params['risultati'], params['nome_elemento']);
+         //call(lat, lon, "vis_mappa.html", params['poiType'], params['range'], params['risultati'], params['nome_elemento']);
+         call(lat, lon, "mappa.html", params['poiType'], params['range'], params['risultati'], params['nome_elemento']);
       }
       else
       {
@@ -262,7 +281,9 @@ var url="http://2.35.153.229/CCSApp/ccs_query.php?pin=test1&token=FAD4A66AB106FE
           </div>
           <div class="navbar-header" style="line-height: 56px;" id="testata" >
             <!--<img src="pics/geonav.png" height="56px" align="left" id="logo_small" />-->
-            <img src="pics/logo.png" height="56px" align="left" id="logo_small" />
+            <a href="index.html">
+              <img src="pics/logo.png" height="56px" align="left" id="logo_small" />
+            </a>
           </div>
 
         </div>
