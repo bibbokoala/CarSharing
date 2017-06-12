@@ -223,6 +223,13 @@ $.fn.serializeObject = function()
 
   });  
 </script>
+
+<script>
+$('#matricola').onchange(function(){
+    this.value = this.value.toLowerCase();
+});
+</script>
+
 </head>
 <body onload="onLoad()">
     <!-- Static navbar -->
