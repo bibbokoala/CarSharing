@@ -124,6 +124,9 @@
     if (indirizzo!=null){
       $("#pac-input").val(indirizzo);
     }
+    else{
+      getLocation();
+    }
 
     $("#btn_targa").click(function(){
       //var formData = $("#query_targa").serialize();
