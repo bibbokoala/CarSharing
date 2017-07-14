@@ -56,12 +56,6 @@
       }
     }
 
-
-
-
-
-
-
 /******************** PER ORA LO COMMENTO DA RIATTIVARE PRIMA DELLA COMPILAZIONE
     if (localStorage.getItem("matricola") == null) {
        console.log("matricola is null! BACK TO INDEX!!!");
@@ -69,12 +63,6 @@
        //document.location.reload(true);
     }
 ******************************************/
-
-
-
-
-
-
 
     //RISOLUZIONE DELLO SCHERMO!
     //window.screen.availHeight
@@ -88,7 +76,6 @@
        console.log(string);
     }).resize();
     */
-
     //var hm = window.screen.availHeight - 500;
     //var hm = $(window).height() - 370 ;
     var hm = window.innerHeight -320;
