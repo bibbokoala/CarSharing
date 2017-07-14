@@ -405,7 +405,8 @@ function statecheck(x, _this) {
 
       function prenota(codice_veicolo, targa){
         //per ora inserito confirm solo per test!
-        if (confirm("Vuoi prenotare il veicolo: " + codice_veicolo + " - targato: " + targa + "?")) {
+        //if (confirm("Vuoi prenotare il veicolo: " + codice_veicolo + " - targato: " + targa + "?")) {
+        if (confirm("Vuoi prenotare il veicolo targato: " + targa + "?")) {
           var vehicle_code = codice_veicolo;
           var utilizzatore = localStorage.getItem("matricola");
           var url = "http://service.cloudmup.com/GOALocale/MachiavelliInsPrenVista.php?utilizzatore="+utilizzatore+"&vehicle_code="+vehicle_code;

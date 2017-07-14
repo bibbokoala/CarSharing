@@ -20,19 +20,19 @@
     $("#link_home").click(function(){
       //alert("link_home");
       localStorage.setItem("link","home");
-      window.location.href = 'menu.html';
+      window.location.href = 'mappa.html';
     });
 
     $("#link_indirizzo").click(function(){
       //alert("link_indirizzo");
       localStorage.setItem("link","indirizzo");
-      window.location.href = 'ric_indirizzo.html';
+      window.location.href = 'mappa.html';
     });
 
     $("#link_elemento").click(function(){
       //alert("link_elemento");
       localStorage.setItem("link","elemento");
-      window.location.href = 'ric_elemento.html';
+      window.location.href = 'mappa.html';
     });
     $("#btn_logout, #btn_logout_f").click(function(){
       //alert("btn_logout");
