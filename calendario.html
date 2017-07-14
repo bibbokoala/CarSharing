@@ -286,6 +286,7 @@
       console.log("btn_chiudi_pren");
       var booking_id = $("#booking_id").val();
       var vehicle_code = $("#upd_veic_disp").val();
+      var plate_num = $("#plate_num").val();
       //alert("booking_id: " + booking_id);
       if ( (booking_id==null)||
            (booking_id.localeCompare("")==0) )
@@ -293,7 +294,7 @@
         return false;
       }
       var url = "http://service.cloudmup.com/GOALocale/MachiavelliChiusura.php?booking_id="+booking_id+"&vehicle_code="+vehicle_code;
-      if (confirm("Vuoi chiudere la prenotazione: " + booking_id + " - sul veicolo: " + vehicle_code + "?")) {
+      if (confirm("Vuoi chiudere la prenotazione: " + booking_id + " - sul veicolo targato: " + plate_num + "?")) {
         $.ajax({
           url: url,
               type: 'POST', // Send post data
@@ -473,8 +474,14 @@
         getPrenDetails(calEvent.id);
         var i;
         for(i = 0; i < obj_details.length; i++) {
+          /*
           var fk_vehicle_code = obj_details[i].fk_vehicle_code;
           $('#event_details_objects').html(fk_vehicle_code);
+          */
+          var plate_num = obj_details[i].plate_num;
+          $('#event_details_objects').html(fk_vehicle_code);
+          $('#plate_num').val(plate_num);
+
           var status = obj_details[i].status;
           $('#event_details_status').html(status);
           var html_text = "<span class='glyphicon glyphicon-calendar'></span>" + 
@@ -912,7 +919,8 @@
             </td>
             <td>
               <label for='upd_veic_disp' >Veicolo disponibile </label>
-              <input id='upd_veic_disp' name='veic_disp' type="text" READONLY class="form-control"></input>
+              <input id='plate_num' name='plate_num' type="text" READONLY class="form-control"></input>
+              <input id='upd_veic_disp' name='veic_disp' type="hidden" ></input>
             </td>
           </tr>
           <tr>
