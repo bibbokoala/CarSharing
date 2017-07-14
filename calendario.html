@@ -48,6 +48,13 @@
         }
         //alert("onDeviceReady");
     }
+    // Handle the back browser button
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    function onBackKeyDown() {
+      if (confirm("Chiudere l'applicazione?")) {
+        navigator.app.exitApp();
+      }
+    }
 </script>
     <link href="fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
     <style>
