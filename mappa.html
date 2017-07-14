@@ -477,7 +477,9 @@ function statecheck(x, _this) {
             var myLatlng = new google.maps.LatLng(arr[i].latitude, arr[i].longitude);
             var content = "<p style='color:#000;'>Veicolo: <b>"+arr[i].poiName+"</b>"+
                           "<br>targa: <b>"+arr[i].url2+"</b>"+
+                          /*13/07/2017 ANTONIO HA CHIESTO DI NASCONDERE SEMPRE IL CODICE VEICOLO
                           "<br>codice veicolo: <b>"+arr[i].url3+"</b>"+
+                          */
                           "<br><!-- - distanza: <b>"+arr[i].distance+" metri </b>-->"+
                           "<br><button id='btn_prenota' name='btn_prenota' class='btn btn-sm btn-success btn-block' "+
                           "     onclick=\"prenota('"+arr[i].url3+"', '"+arr[i].url2+"');\" >PRENOTA</button>"+
